@@ -35,10 +35,10 @@ const FirstActivity_StackNavigator = createStackNavigator({
   First: {
     screen: Menu,
     navigationOptions: ({ navigation }) => ({
-      title: 'ASSAB - recherche',
+      title: 'ASSAB',
       headerLeft: ()=> <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#DD614A',
         shadowOpacity: 0,
         elevation: 0,
       },
@@ -56,7 +56,7 @@ const Screen2_StackNavigator = createStackNavigator({
       headerLeft: ()=> <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#DD614A',
       },
       headerTintColor: '#fff',
     }),

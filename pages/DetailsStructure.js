@@ -94,10 +94,9 @@ export default class PeopleDetailPage extends React.Component {
 									<Text style={[style.cell, style.content]}>{this.AffichageCondionelAge(person.age_max, person.age_min)}</Text>
 
 								</View>
-								<View style={style.detailLine}>
+								<View style={style.detailContainer2}>
 									<Text style={[style.cell, style.label]}>{"Services proposés"}</Text>
 									<Text style={[style.cell, style.content]}>{person.description}</Text>
-									<Text style={[style.cell, style.content]}> </Text>
 									<View style={{ flex: 1, flexWrap: 'wrap' }}>{this.affichageServiceMedG(person.medG, person.droitsMedG, person.sans_rdvMedG, person.sur_rdvMedG, person.equipe_mobileMedG)}</View>
 									<View style={{ flex: 1, flexWrap: 'wrap' }}>{this.affichageServiceDentaire(person.Dentaire, person.droitsDentaire, person.sans_rdvDentaire, person.sur_rdvDentaire, person.equipe_mobileDentaire)}</View>
 									<View style={{ flex: 1, flexWrap: 'wrap' }}>{this.affichageServiceSoinsinfirmiers(person.Soinsinfirmiers, person.droitsSoinsinfirmiers, person.sans_rdvSoinsinfirmiers, person.sur_rdvSoinsinfirmiers, person.equipe_mobileSoinsinfirmiers)}</View>
@@ -140,8 +139,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (medG != null) {
 			if (equipe_mobileMedG != null) {
 				return (
-					<View style={style.cab}>
+					<View style={style.line}>
 						<Text style={[style.cell, style.content3]}>Médecin généraliste :{medG}</Text>
+                        <Text style={[style.cell, style.content]}>{medG}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -149,9 +149,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvMedG != null && sur_rdvMedG != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Médecin généraliste :{medG}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Médecin généraliste :</Text>
+                        <Text style={[style.cell, style.content]}>{medG}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvMedG}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvMedG}</Text>
 					</View>
@@ -159,9 +160,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvMedG != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Médecin généraliste :{medG}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Médecin généraliste :</Text>
+                        <Text style={[style.cell, style.content]}>{medG}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvMedG}</Text>
 
 					</View>
@@ -169,18 +171,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvMedG != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Médecin généraliste :{medG}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Médecin généraliste :</Text>
+                        <Text style={[style.cell, style.content]}>{medG}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvMedG}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Médecin généraliste :{medG}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Médecin généraliste :</Text>
+                        <Text style={[style.cell, style.content]}>{medG}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsMedG}</Text>
 					</View>
 				)
 			}
@@ -191,8 +195,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Dentaire != null) {
 			if (equipe_mobileDentaire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Dentaire :{Dentaire}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Dentaire :</Text>
+                        <Text style={[style.cell, style.content]}>{Dentaire}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -200,9 +205,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDentaire != null && sur_rdvDentaire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Dentaire :{Dentaire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Dentaire :</Text>
+                        <Text style={[style.cell, style.content]}>{Dentaire}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDentaire}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDentaire}</Text>
 					</View>
@@ -210,9 +216,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDentaire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Dentaire :{Dentaire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Dentaire :</Text>
+                        <Text style={[style.cell, style.content]}>{Dentaire}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDentaire}</Text>
 
 					</View>
@@ -220,18 +227,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvDentaire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Dentaire :{Dentaire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Dentaire :</Text>
+                        <Text style={[style.cell, style.content]}>{Dentaire}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDentaire}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Dentaire :{Dentaire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Dentaire :</Text>
+                        <Text style={[style.cell, style.content]}>{Dentaire}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsDentaire}</Text>
 					</View>
 				)
 			}
@@ -242,8 +251,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Soinsinfirmiers != null) {
 			if (equipe_mobileSoinsinfirmiers != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Soins Infirmiers :{Soinsinfirmiers}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Soins Infirmiers :</Text>
+                        <Text style={[style.cell, style.content]}>{Soinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -251,9 +261,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvSoinsinfirmiers != null && sur_rdvSoinsinfirmiers != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Soins Infirmiers :{Soinsinfirmiers}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Soins Infirmiers :</Text>
+                        <Text style={[style.cell, style.content]}>{Soinsinfirmiers}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSoinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSoinsinfirmiers}</Text>
 					</View>
@@ -261,9 +272,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvSoinsinfirmiers != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Soins Infirmiers :{Soinsinfirmiers}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Soins Infirmiers :</Text>
+                        <Text style={[style.cell, style.content]}>{Soinsinfirmiers}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSoinsinfirmiers}</Text>
 
 					</View>
@@ -271,18 +283,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvSoinsinfirmiers != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Soins Infirmiers :{Soinsinfirmiers}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Soins Infirmiers :</Text>
+                        <Text style={[style.cell, style.content]}>{Soinsinfirmiers}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSoinsinfirmiers}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Soins Infirmiers :{Soinsinfirmiers}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Soins Infirmiers :</Text>
+                        <Text style={[style.cell, style.content]}>{Soinsinfirmiers}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSoinsinfirmiers}</Text>
 					</View>
 				)
 			}
@@ -293,8 +307,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Laboratoire != null) {
 			if (equipe_mobileLaboratoire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laboratoire :{Laboratoire}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Laboratoire :</Text>
+                        <Text style={[style.cell, style.content]}>{Laboratoire}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -302,9 +317,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvLaboratoire != null && sur_rdvLaboratoire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laboratoire :{Laboratoire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laboratoire :</Text>
+                        <Text style={[style.cell, style.content]}>{Laboratoire}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvLaboratoire}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvLaboratoire}</Text>
 					</View>
@@ -312,9 +328,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvLaboratoire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laboratoire :{Laboratoire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laboratoire :</Text>
+                        <Text style={[style.cell, style.content]}>{Laboratoire}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvLaboratoire}</Text>
 
 					</View>
@@ -322,18 +339,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvLaboratoire != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laboratoire :{Laboratoire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laboratoire :</Text>
+                        <Text style={[style.cell, style.content]}>{Laboratoire}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvLaboratoire}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laboratoire :{Laboratoire}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laboratoire :</Text>
+                        <Text style={[style.cell, style.content]}>{Laboratoire}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaboratoire}</Text>
 					</View>
 				)
 			}
@@ -344,8 +363,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Depistage != null) {
 			if (equipe_mobileDepistage != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Depistage :{Depistage}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Depistage :</Text>
+                        <Text style={[style.cell, style.content]}>{Depistage}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -353,9 +373,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDepistage != null && sur_rdvDepistage != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Depistage :{Depistage}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Depistage :</Text>
+                        <Text style={[style.cell, style.content]}>{Depistage}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDepistage}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDepistage}</Text>
 					</View>
@@ -363,9 +384,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDepistage != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Depistage :{Depistage}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Depistage :</Text>
+                        <Text style={[style.cell, style.content]}>{Depistage}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDepistage}</Text>
 
 					</View>
@@ -373,18 +395,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvDepistage != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Depistage :{Depistage}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Depistage :</Text>
+                        <Text style={[style.cell, style.content]}>{Depistage}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDepistage}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Depistage :{Depistage}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Depistage :</Text>
+                        <Text style={[style.cell, style.content]}>{Depistage}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsDepistage}</Text>
 					</View>
 				)
 			}
@@ -395,8 +419,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (ImagerieMed != null) {
 			if (equipe_mobileImagerieMed != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Imagerie Medicale :{ImagerieMed}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Imagerie Medicale :</Text>
+                        <Text style={[style.cell, style.content]}>{ImagerieMed}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -404,9 +429,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvImagerieMed != null && sur_rdvImagerieMed != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Imagerie Medicale :{ImagerieMed}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Imagerie Medicale :</Text>
+                        <Text style={[style.cell, style.content]}>{ImagerieMed}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvImagerieMed}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvImagerieMed}</Text>
 					</View>
@@ -414,9 +440,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvImagerieMed != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Imagerie Medicale:{ImagerieMed}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Imagerie Medicale :</Text>
+                        <Text style={[style.cell, style.content]}>{ImagerieMed}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvImagerieMed}</Text>
 
 					</View>
@@ -424,18 +451,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvImagerieMed != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Imagerie Medicale :{ImagerieMed}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Imagerie Medicale :</Text>
+                        <Text style={[style.cell, style.content]}>{ImagerieMed}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvImagerieMed}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Imagerie Medicale :{ImagerieMed}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Imagerie Medicale :</Text>
+                        <Text style={[style.cell, style.content]}>{ImagerieMed}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsImagerieMed}</Text>
 					</View>
 				)
 			}
@@ -446,8 +475,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Traitement != null) {
 			if (equipe_mobileTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Delivrance de Traitement :{Traitement}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Delivrance de Traitement :</Text>
+                        <Text style={[style.cell, style.content]}>{Traitement}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -455,9 +485,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvTraitement != null && sur_rdvTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Delivrance de Traitement :{Traitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Delivrance de Traitement :</Text>
+                        <Text style={[style.cell, style.content]}>{Traitement}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvTraitement}</Text>
 					</View>
@@ -465,9 +496,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Delivrance de Traitement :{Traitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Delivrance de Traitement :</Text>
+                        <Text style={[style.cell, style.content]}>{Traitement}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvTraitement}</Text>
 
 					</View>
@@ -475,18 +507,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Delivrance deTraitement :{Traitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Delivrance de Traitement :</Text>
+                        <Text style={[style.cell, style.content]}>{Traitement}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvTraitement}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Delivrance de Traitement :{Traitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Delivrance de Traitement :</Text>
+                        <Text style={[style.cell, style.content]}>{Traitement}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsTraitement}</Text>
 					</View>
 				)
 			}
@@ -497,8 +531,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Psychiatrique != null) {
 			if (equipe_mobilePsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychiatrique :{Psychiatrique}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychiatrique}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -506,9 +541,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvPsychiatrique != null && sur_rdvPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychiatrique :{Psychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychiatrique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychiatrique}</Text>
 					</View>
@@ -516,9 +552,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychiatrique :{Psychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychiatrique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychiatrique}</Text>
 
 					</View>
@@ -526,18 +563,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychiatrique :{Psychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychiatrique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychiatrique}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychiatrique :{Psychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychiatrique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychiatrique}</Text>
 					</View>
 				)
 			}
@@ -548,8 +587,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Psychologue != null) {
 			if (equipe_mobilePsychologue != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychologue :{Psychologue}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Psychologue :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychologue}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -557,9 +597,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvPsychologue != null && sur_rdvPsychologue != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychologue :{Psychologue}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychologue :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychologue}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychologue}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychologue}</Text>
 					</View>
@@ -567,9 +608,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvPsychologue != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychologue :{Psychologue}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychologue :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychologue}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychologue}</Text>
 
 					</View>
@@ -577,18 +619,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvPsychologue != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychologue :{Psychologue}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychologue :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychologue}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychologue}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychologue :{Psychologue}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychologue :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychologue}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychologue}</Text>
 					</View>
 				)
 			}
@@ -599,8 +643,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (TraitementPsychiatrique != null) {
 			if (equipe_mobileTraitementPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :{TraitementPsychiatrique}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{TraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -608,9 +653,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvTraitementPsychiatrique != null && sur_rdvTraitementPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :{TraitementPsychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitement Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{TraitementPsychiatrique}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvTraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvTraitementPsychiatrique}</Text>
 					</View>
@@ -618,9 +664,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvTraitementPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :{TraitementPsychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitement Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{TraitementPsychiatrique}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvTraitementPsychiatrique}</Text>
 
 					</View>
@@ -628,18 +675,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvTraitementPsychiatrique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :{TraitementPsychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitement Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{TraitementPsychiatrique}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvTraitementPsychiatrique}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitement Psychiatrique :{TraitementPsychiatrique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitement Psychiatrique :</Text>
+                        <Text style={[style.cell, style.content]}>{TraitementPsychiatrique}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsTraitementPsychiatrique}</Text>
 					</View>
 				)
 			}
@@ -650,8 +699,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (ConsultationAddictologie != null) {
 			if (equipe_mobileConsultationAddictologie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultation Addictologie :{ConsultationAddictologie}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Consultation Addictologie :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -659,9 +709,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvConsultationAddictologie != null && sur_rdvConsultationAddictologie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultation Addictologie :{ConsultationAddictologie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultation Addictologie :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultationAddictologie}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvConsultationAddictologie}</Text>
 					</View>
@@ -669,9 +720,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvConsultationAddictologie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultation Addictologie :{ConsultationAddictologie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultation Addictologie :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultationAddictologie}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvConsultationAddictologie}</Text>
 
 					</View>
@@ -679,18 +731,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvConsultationAddictologie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultation Addictologie :{ConsultationAddictologie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultation Addictologie :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultationAddictologie}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvConsultationAddictologie}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultation Addictologie :{ConsultationAddictologie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultation Addictologie :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultationAddictologie}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsConsultationAddictologie}</Text>
 					</View>
 				)
 			}
@@ -701,8 +755,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (delivranceTraitement != null) {
 			if (equipe_mobiledelivranceTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitements addictions :{delivranceTraitement}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Traitements addictions :</Text>
+                        <Text style={[style.cell, style.content]}>{delivranceTraitement}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -710,9 +765,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvdelivranceTraitement != null && sur_rdvdelivranceTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitements addictions :{delivranceTraitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitements addictions :</Text>
+                        <Text style={[style.cell, style.content]}>{delivranceTraitement}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvdelivranceTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvdelivranceTraitement}</Text>
 					</View>
@@ -720,9 +776,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvdelivranceTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitements addictions :{delivranceTraitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitements addictions :</Text>
+                        <Text style={[style.cell, style.content]}>{delivranceTraitement}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvdelivranceTraitement}</Text>
 
 					</View>
@@ -730,18 +787,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvdelivranceTraitement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitements addictions :{delivranceTraitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitements addictions :</Text>
+                        <Text style={[style.cell, style.content]}>{delivranceTraitement}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvdelivranceTraitement}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Traitements addictions :{delivranceTraitement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Traitements addictions :</Text>
+                        <Text style={[style.cell, style.content]}>{delivranceTraitement}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsdelivranceTraitement}</Text>
 					</View>
 				)
 			}
@@ -752,8 +811,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Methadone != null) {
 			if (equipe_mobileMethadone != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Methadone :{Methadone}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Methadone :</Text>
+                        <Text style={[style.cell, style.content]}>{Methadone}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -761,9 +821,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvMethadone != null && sur_rdvMethadone != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Methadone :{Methadone}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Methadone :</Text>
+                        <Text style={[style.cell, style.content]}>{Methadone}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvMethadone}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvMethadone}</Text>
 					</View>
@@ -771,9 +832,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvMethadone != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Methadone :{Methadone}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Methadone :</Text>
+                        <Text style={[style.cell, style.content]}>{Methadone}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvMethadone}</Text>
 
 					</View>
@@ -781,18 +843,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvMethadone != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Methadone :{Methadone}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Methadone :</Text>
+                        <Text style={[style.cell, style.content]}>{Methadone}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvMethadone}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Methadone :{Methadone}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Methadone :</Text>
+                        <Text style={[style.cell, style.content]}>{Methadone}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsMethadone}</Text>
 					</View>
 				)
 			}
@@ -803,18 +867,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Subutex != null) {
 			if (equipe_mobileSubutex != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Subutex :{Subutex}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Subutex :</Text>
+                        <Text style={[style.cell, style.content]}>{Subutex}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvSubutex != null && sur_rdvSubutex != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Subutex :{Subutex}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Subutex :</Text>
+                        <Text style={[style.cell, style.content]}>{Subutex}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSubutex}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSubutex}</Text>
 					</View>
@@ -822,9 +888,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvSubutex != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Subutex :{Subutex}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Subutex :</Text>
+                        <Text style={[style.cell, style.content]}>{Subutex}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSubutex}</Text>
 
 					</View>
@@ -832,18 +899,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvSubutex != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Subutex :{Subutex}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Subutex :</Text>
+                        <Text style={[style.cell, style.content]}>{Subutex}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSubutex}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Subutex :{Subutex}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Subutex :</Text>
+                        <Text style={[style.cell, style.content]}>{Subutex}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsSubutex}</Text>
 					</View>
 				)
 			}
@@ -854,18 +923,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Psychotropes != null) {
 			if (equipe_mobilePsychotropes != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychotropes :{Psychotropes}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychotropes :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychotropes}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvPsychotropes != null && sur_rdvPsychotropes != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychotropes :{Psychotropes}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychotropes :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychotropes}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychotropes}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychotropes}</Text>
 					</View>
@@ -873,9 +944,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvPsychotropes != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychotropes :{Psychotropes}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychotropes :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychotropes}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvPsychotropes}</Text>
 
 					</View>
@@ -883,18 +955,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvPsychotropes != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychotropes :{Psychotropes}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychotropes :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychotropes}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvPsychotropes}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Psychotropes :{Psychotropes}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Psychotropes :</Text>
+                        <Text style={[style.cell, style.content]}>{Psychotropes}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsPsychotropes}</Text>
 					</View>
 				)
 			}
@@ -905,8 +979,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (ConsultSociales != null) {
 			if (equipe_mobileConsultSociales != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultations Sociales :{ConsultSociales}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Consultations Sociales :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultSociales}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -914,9 +989,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvConsultSociales != null && sur_rdvConsultSociales != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultations Sociales :{ConsultSociales}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultations Sociales :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultSociales}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvConsultSociales}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvConsultSociales}</Text>
 					</View>
@@ -924,9 +1000,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvConsultSociales != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultations Sociales :{ConsultSociales}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultations Sociales :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultSociales}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvConsultSociales}</Text>
 
 					</View>
@@ -934,18 +1011,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvConsultSociales != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultations Sociales :{ConsultSociales}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultations Sociales :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultSociales}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvConsultSociales}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Consultations Sociales :{ConsultSociales}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Consultations Sociales :</Text>
+                        <Text style={[style.cell, style.content]}>{ConsultSociales}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsConsultSociales}</Text>
 					</View>
 				)
 			}
@@ -956,18 +1035,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (SocioEducatif != null) {
 			if (equipe_mobileSocioEducatif != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>SocioEducatif :{SocioEducatif}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :</Text>
+                        <Text style={[style.cell, style.content]}>{SocioEducatif}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvSocioEducatif != null && sur_rdvSocioEducatif != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :{SocioEducatif}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :</Text>
+                        <Text style={[style.cell, style.content]}>{SocioEducatif}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSocioEducatif}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSocioEducatif}</Text>
 					</View>
@@ -975,9 +1056,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvSocioEducatif != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :{SocioEducatif}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :</Text>
+                        <Text style={[style.cell, style.content]}>{SocioEducatif}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvSocioEducatif}</Text>
 
 					</View>
@@ -985,18 +1067,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvSocioEducatif != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :{SocioEducatif}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :</Text>
+                        <Text style={[style.cell, style.content]}>{SocioEducatif}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvSocioEducatif}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :{SocioEducatif}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Accompagnement Socio-Educatif :</Text>
+                        <Text style={[style.cell, style.content]}>{SocioEducatif}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsSocioEducatif}</Text>
 					</View>
 				)
 			}
@@ -1007,8 +1091,9 @@ export default class PeopleDetailPage extends React.Component {
 		if (Domiciliation != null) {
 			if (equipe_mobileDomiciliation != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Domiciliation :{Domiciliation}</Text>
+					<View style={style.line}>
+						<Text style={[style.cell, style.content3]}>Domiciliation :</Text>
+                        <Text style={[style.cell, style.content]}>{Domiciliation}</Text>
 						<Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
@@ -1016,9 +1101,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDomiciliation != null && sur_rdvDomiciliation != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Domiciliation :{Domiciliation}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Domiciliation :</Text>
+                        <Text style={[style.cell, style.content]}>{Domiciliation}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDomiciliation}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDomiciliation}</Text>
 					</View>
@@ -1026,9 +1112,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDomiciliation != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Domiciliation :{Domiciliation}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Domiciliation :</Text>
+                        <Text style={[style.cell, style.content]}>{Domiciliation}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDomiciliation}</Text>
 
 					</View>
@@ -1036,18 +1123,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvDomiciliation != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Domiciliation :{Domiciliation}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Domiciliation :</Text>
+                        <Text style={[style.cell, style.content]}>{Domiciliation}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDomiciliation}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Domiciliation :{Domiciliation}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Domiciliation :</Text>
+                        <Text style={[style.cell, style.content]}>{Domiciliation}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsDomiciliation}</Text>
 					</View>
 				)
 			}
@@ -1058,18 +1147,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Juridique != null) {
 			if (equipe_mobileJuridique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Juridique :{Juridique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Juridique :</Text>
+                        <Text style={[style.cell, style.content]}>{Juridique}</Text>
+                                                <Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvJuridique != null && sur_rdvJuridique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Juridique :{Juridique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Juridique :</Text>
+                        <Text style={[style.cell, style.content]}>{Juridique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvJuridique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvJuridique}</Text>
 					</View>
@@ -1077,9 +1168,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvJuridique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Juridique :{Juridique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Juridique :</Text>
+                        <Text style={[style.cell, style.content]}>{Juridique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvJuridique}</Text>
 
 					</View>
@@ -1087,18 +1179,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvJuridique != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Juridique :{Juridique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Juridique :</Text>
+                        <Text style={[style.cell, style.content]}>{Juridique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvJuridique}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Juridique :{Juridique}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
+					<View style={style.line}>
+                       <Text style={[style.cell, style.content3]}>Juridique :</Text>
+                        <Text style={[style.cell, style.content]}>{Juridique}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsJuridique}</Text>
 					</View>
 				)
 			}
@@ -1109,18 +1203,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Hebergement != null) {
 			if (equipe_mobileHebergement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Hebergement :{Hebergement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Hebergement :</Text>
+                        <Text style={[style.cell, style.content]}>{Hebergement}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvHebergement != null && sur_rdvHebergement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Hebergement :{Hebergement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Hebergement :</Text>
+                        <Text style={[style.cell, style.content]}>{Hebergement}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvHebergement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvHebergement}</Text>
 					</View>
@@ -1128,9 +1224,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvHebergement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Hebergement :{Hebergement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Hebergement :</Text>
+                        <Text style={[style.cell, style.content]}>{Hebergement}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvHebergement}</Text>
 
 					</View>
@@ -1138,18 +1235,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvHebergement != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Hebergement :{Hebergement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Hebergement :</Text>
+                        <Text style={[style.cell, style.content]}>{Hebergement}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvHebergement}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Hebergement :{Hebergement}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Hebergement :</Text>
+                        <Text style={[style.cell, style.content]}>{Hebergement}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsHebergement}</Text>
 					</View>
 				)
 			}
@@ -1160,18 +1259,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Repas != null) {
 			if (equipe_mobileRepas != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Repas :{Repas}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Repas :</Text>
+                        <Text style={[style.cell, style.content]}>{Repas}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvRepas != null && sur_rdvRepas != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Repas :{Repas}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Repas :</Text>
+                        <Text style={[style.cell, style.content]}>{Repas}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvRepas}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvRepas}</Text>
 					</View>
@@ -1179,9 +1280,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvRepas != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Repas :{Repas}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Repas :</Text>
+                        <Text style={[style.cell, style.content]}>{Repas}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvRepas}</Text>
 
 					</View>
@@ -1189,18 +1291,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvRepas != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Repas :{Repas}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Repas :</Text>
+                        <Text style={[style.cell, style.content]}>{Repas}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvRepas}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Repas :{Repas}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Repas :</Text>
+                        <Text style={[style.cell, style.content]}>{Repas}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsRepas}</Text>
 					</View>
 				)
 			}
@@ -1211,18 +1315,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Douche != null) {
 			if (equipe_mobileDouche != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Douche :{Douche}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Douche :</Text>
+                        <Text style={[style.cell, style.content]}>{Douche}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvDouche != null && sur_rdvDouche != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Douche :{Douche}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Douche :</Text>
+                        <Text style={[style.cell, style.content]}>{Douche}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDouche}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDouche}</Text>
 					</View>
@@ -1230,9 +1336,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvDouche != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Douche :{Douche}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Douche :</Text>
+                        <Text style={[style.cell, style.content]}>{Douche}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvDouche}</Text>
 
 					</View>
@@ -1240,18 +1347,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvDouche != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Douche :{Douche}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Douche :</Text>
+                        <Text style={[style.cell, style.content]}>{Douche}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvDouche}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Douche :{Douche}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Douche :</Text>
+                        <Text style={[style.cell, style.content]}>{Douche}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsDouche}</Text>
 					</View>
 				)
 			}
@@ -1262,18 +1371,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Laverie != null) {
 			if (equipe_mobileLaverie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laverie :{Laverie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laverie :</Text>
+                        <Text style={[style.cell, style.content]}>{Laverie}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvLaverie != null && sur_rdvLaverie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laverie :{Laverie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laverie :</Text>
+                        <Text style={[style.cell, style.content]}>{Laverie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvLaverie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvLaverie}</Text>
 					</View>
@@ -1281,9 +1392,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvLaverie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laverie :{Laverie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laverie :</Text>
+                        <Text style={[style.cell, style.content]}>{Laverie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvLaverie}</Text>
 
 					</View>
@@ -1291,18 +1403,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvLaverie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laverie :{Laverie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laverie :</Text>
+                        <Text style={[style.cell, style.content]}>{Laverie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvLaverie}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Laverie :{Laverie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Laverie :</Text>
+                        <Text style={[style.cell, style.content]}>{Laverie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsLaverie}</Text>
 					</View>
 				)
 			}
@@ -1313,18 +1427,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Bagagerie != null) {
 			if (equipe_mobileBagagerie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Bagagerie :{Bagagerie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Bagagerie :</Text>
+                        <Text style={[style.cell, style.content]}>{Bagagerie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvBagagerie != null && sur_rdvBagagerie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Bagagerie :{Bagagerie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Bagagerie :</Text>
+                        <Text style={[style.cell, style.content]}>{Bagagerie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvBagagerie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvBagagerie}</Text>
 					</View>
@@ -1332,9 +1448,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvBagagerie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Bagagerie :{Bagagerie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Bagagerie :</Text>
+                        <Text style={[style.cell, style.content]}>{Bagagerie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvBagagerie}</Text>
 
 					</View>
@@ -1342,18 +1459,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvBagagerie != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Bagagerie :{Bagagerie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Bagagerie :</Text>
+                        <Text style={[style.cell, style.content]}>{Bagagerie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvBagagerie}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Bagagerie :{Bagagerie}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Bagagerie :</Text>
+                        <Text style={[style.cell, style.content]}>{Bagagerie}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsBagagerie}</Text>
 					</View>
 				)
 			}
@@ -1364,18 +1483,20 @@ export default class PeopleDetailPage extends React.Component {
 		if (Chenil != null) {
 			if (equipe_mobileChenil != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Chenil :{Chenil}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Chenil :</Text>
+                        <Text style={[style.cell, style.content]}>{Chenil}</Text>
+                        <Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
 						<Text style={[style.cell, style.content]}>Equipe Mobile</Text>
 					</View>
 				)
 			}
 			else if (sans_rdvChenil != null && sur_rdvChenil != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Chenil :{Chenil}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Chenil :</Text>
+                        <Text style={[style.cell, style.content]}>{Chenil}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvChenil}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvChenil}</Text>
 					</View>
@@ -1383,9 +1504,10 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sans_rdvChenil != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Chenil :{Chenil}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Chenil :</Text>
+                        <Text style={[style.cell, style.content]}>{Chenil}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
 						<Text style={[style.cell, style.content]}>sans rdv : {sans_rdvChenil}</Text>
 
 					</View>
@@ -1393,18 +1515,20 @@ export default class PeopleDetailPage extends React.Component {
 			}
 			else if (sur_rdvChenil != null) {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Chenil :{Chenil}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Chenil :</Text>
+                        <Text style={[style.cell, style.content]}>{Chenil}</Text>
+                            <Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
 						<Text style={[style.cell, style.content]}>sur rdv : {sur_rdvChenil}</Text>
 					</View>
 				)
 			}
 			else {
 				return (
-					<View style={style.cab}>
-						<Text style={[style.cell, style.content3]}>Chenil :{Chenil}</Text>
-						<Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
+					<View style={style.line}>
+                        <Text style={[style.cell, style.content3]}>Chenil :</Text>
+                        <Text style={[style.cell, style.content]}>{Chenil}</Text>
+                                            <Text style={[style.cell, style.content2]}>{droitsChenil}</Text>
 					</View>
 				)
 			}
@@ -1438,6 +1562,16 @@ const style = StyleSheet.create({
 		elevation: 1,
 		backgroundColor: "#FFFFFF",
 	},
+detailContainer2: {
+    marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    elevation: 1,
+    backgroundColor: "#FFFFFF",
+alignItems: 'center',
+    
+
+},
 	detailLine: {
 		paddingLeft: 15,
 		paddingRight: 15,
@@ -1493,13 +1627,25 @@ const style = StyleSheet.create({
 		//textAlign: 'right',
 		flex: 7,
 		fontWeight: 'bold',
-		color: 'orange',
+		color: '#DD614A',
 	},
 	content3: {
 		//textAlign: 'right',
 		flex: 7,
 		fontWeight: 'bold',
 	},
+line: {
+paddingLeft: 15,
+paddingRight: 15,
+paddingTop: 10,
+paddingBottom: 10,
+flexDirection: 'column',
+justifyContent: 'space-between',
+alignItems: 'center',
+borderBottomWidth: 1,
+borderColor: '#C5C5C5'
+
+},
 	longLabel: {
 		fontSize: 20
 	}

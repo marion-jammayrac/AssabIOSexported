@@ -258,14 +258,13 @@ const style = StyleSheet.create({
         marginRight: 5,
     },
     picker: {
-        width: 200,
-        height: 40,
-        backgroundColor: '#FFF0E0',
-        borderColor: 'black',
-        borderWidth: 1,
+        width: 250,
+        height: 100,
     },
     pickerItem: {
-        color: 'red'
+        color: 'black',
+    height: 100,
+
     },
     button: {
         justifyContent: 'flex-start',
@@ -274,10 +273,13 @@ const style = StyleSheet.create({
         textAlign: 'center',
         width: 60,
         height: 40,
-        backgroundColor: '#FFF0E0',
-        borderColor: 'black',
-        borderWidth: 1,
-        fontSize: 16,
+        backgroundColor: '#EAEAE9',
+        borderWidth: 0,
+        fontSize: 10,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
     },
     container3: {
         flex: 1,

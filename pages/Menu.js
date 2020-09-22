@@ -22,7 +22,7 @@ const Menu = createMaterialTopTabNavigator(
       activeTintColor: '#FFFFFF',
       inactiveTintColor: '#F8F8F8',
       style: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#DD614A',
       },
       labelStyle: {
         textAlign: 'center',
