@@ -28,7 +28,7 @@ const Menu = createMaterialTopTabNavigator(
         textAlign: 'center',
       },
       indicatorStyle: {
-        borderBottomColor: '#87B56A',
+        borderBottomColor: '#FFFFFF',
         borderBottomWidth: 2,
       },
     },

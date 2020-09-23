@@ -1,6 +1,6 @@
 import React from 'react';
 import { openDatabase } from 'react-native-sqlite-storage';
-import { StyleSheet, View, Text, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TextInput ,Platform} from 'react-native';
 import Liste from './Liste';
 import Mybutton from './components/Mybutton';
 import { Picker } from '@react-native-community/picker';
@@ -233,6 +233,8 @@ export default class PeoplePage extends React.Component {
 
 }
 
+//var {Platform} = React;
+
 const style = StyleSheet.create({
     container: {
         flex: 1,
@@ -258,8 +260,15 @@ const style = StyleSheet.create({
         marginRight: 5,
     },
     picker: {
-        width: 250,
-        height: 100,
+        width: (Platform.OS === 'ios') ? 250 : 200, 
+        height: (Platform.OS === 'ios') ? 100 : 40,
+        backgroundColor: (Platform.OS === 'android') ? '#EAEAE9' : null,
+        /*
+        borderBottomLeftRadius: (Platform.OS === 'android') ? 20 : null,
+        borderBottomRightRadius: (Platform.OS === 'android') ? 20 : null,
+        borderTopLeftRadius:(Platform.OS === 'android') ? 20 : null,
+        borderTopRightRadius: (Platform.OS === 'android') ? 20 : null,
+        */
     },
     pickerItem: {
         color: 'black',
@@ -275,7 +284,8 @@ const style = StyleSheet.create({
         height: 40,
         backgroundColor: '#EAEAE9',
         borderWidth: 0,
-        fontSize: 10,
+        fontSize: 15,
+        fontWeight: "bold",
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopLeftRadius: 10,
