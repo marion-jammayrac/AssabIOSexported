@@ -49,6 +49,7 @@
       "size" : "60x60"
     },
     {
+      "filename" : "Webp.net-resizeimage.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
@@ -60,11 +61,13 @@
       "size" : "20x20"
     },
     {
+      "filename" : "assab_29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
+      "filename" : "assab_58-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
@@ -82,16 +85,19 @@
       "size" : "40x40"
     },
     {
+      "filename" : "assab_76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
+      "filename" : "assab_152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "assab_167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"

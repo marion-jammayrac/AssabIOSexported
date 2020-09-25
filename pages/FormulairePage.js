@@ -64,7 +64,7 @@ export default class PeoplePage extends React.Component {
     }
 
     SanteOuSocial(besoin) {
-        if (besoin == 'Somatique') {
+        if (besoin == 'Somatique')
             return (
                 <View style={style.container2}>
                     <Text style={style.title}>Précisez :</Text>
@@ -88,8 +88,7 @@ export default class PeoplePage extends React.Component {
         }
         if (besoin == 'Santé Mentale') {
             return (
-
-                <View style={style.container2}>
+                    <View style={style.container2}>
                     <Text style={style.title}>Précisez :</Text>
                     <Picker
                         style={[style.picker]} itemStyle={style.pickerItem}
@@ -105,6 +104,7 @@ export default class PeoplePage extends React.Component {
             )
         }
         if (besoin == 'Social') {
+          
             return (
                 <View style={style.container2}>
                     <Text style={style.title}>Précisez :</Text>
@@ -123,6 +123,7 @@ export default class PeoplePage extends React.Component {
             )
         }
         if (besoin == 'Addictions') {
+        
             return (
                 <View style={style.container2}>
                     <Text style={style.title}>Précisez :</Text>
